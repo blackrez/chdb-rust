@@ -1,14 +1,13 @@
 [package]
 name = "chdb-rust"
 version = "1.0.0"
-edition = "2021"
+edition = "2024"
 keywords = ["clickhouse", "chdb", "database", "embedded", "analytics"]
 
 [dependencies]
-thiserror = "1"
+thiserror = "2"
 
 [build-dependencies]
-bindgen = "0.70.1"
+bindgen = "0.72.1"
 
 [dev-dependencies]
-tempdir = "0.3.7"

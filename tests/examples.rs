@@ -11,9 +11,8 @@ fn test_stateful() -> Result<()> {
     //
     // Create session.
     //
-    let tmp = tempdir::TempDir::new("chdb-rust")?;
     let session = SessionBuilder::new()
-        .with_data_path(tmp.path())
+        .with_data_path("/tmp")
         .with_arg(Arg::LogLevel(LogLevel::Debug))
         .with_arg(Arg::Custom("priority".into(), Some("1".into())))
         .with_auto_cleanup(true)
