@@ -4,8 +4,8 @@ fn main() {
     // Tell cargo to look for shared libraries in the specified directory
     println!("cargo:rustc-link-search=./");
 
-    // Tell cargo to tell rustc to link the system chdb library.
-    println!("cargo:rustc-link-lib=chdb");
+    // Tell cargo to tell rustc to link the static chdb library.
+    println!("cargo:rustc-link-lib=static=chdb");
 
     // Tell cargo to invalidate the built crate whenever the wrapper changes.
     println!("cargo:rerun-if-changed=chdb.h");

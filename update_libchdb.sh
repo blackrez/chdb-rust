@@ -35,16 +35,16 @@ LATEST_RELEASE=v3.6.0
 case "$(uname -s)" in
     Linux)
         if [[ $(uname -m) == "aarch64" ]]; then
-            PLATFORM="linux-aarch64-libchdb.tar.gz"
+            PLATFORM="linux-aarch64-libchdb-static.tar.gz"
         else
-            PLATFORM="linux-x86_64-libchdb.tar.gz"
+		PLATFORM="linux-x86_64-libchdb-static.tar.gz"
         fi
         ;;
     Darwin)
         if [[ $(uname -m) == "arm64" ]]; then
-            PLATFORM="macos-arm64-libchdb.tar.gz"
+            PLATFORM="macos-arm64-libchdb-static.tar.gz"
         else
-            PLATFORM="macos-x86_64-libchdb.tar.gz"
+            PLATFORM="macos-x86_64-libchdb-static.tar.gz"
         fi
         ;;
     *)
@@ -94,7 +94,7 @@ if [[ "$1" == "--global" ]]; then
   if [[ $EUID -ne 0 ]]; then
       SUDO='sudo'
       GREENECHO "\nYou will be asked for your sudo password to install:"
-      echo "    libchdb.so to /usr/local/lib/"
+      echo "    libchdb.a to /usr/local/lib/"
       echo "    chdb.h to /usr/local/include/"
   fi
 
